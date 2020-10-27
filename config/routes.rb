@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   get 'customers/index'
-  root to: "customer#index"
+  root to: "customers#index"
 end
