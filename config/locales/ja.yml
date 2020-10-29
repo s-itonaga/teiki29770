@@ -1,0 +1,9 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       name: 店舗名
+       code: 日販ID
+     tweet:
+       text: テキスト
+       image: 画像

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'customers/index'
+  devise_for :users
   root to: "customers#index"
+  resources :users, only: [:edit, :update]
 end
