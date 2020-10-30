@@ -42,7 +42,7 @@ Things you may want to cover:
 | -------------- | ---------- | ------------------------------ |
 | family_name    | string     | null: false                    |
 | name           | string     | null: false                    |
-| phone_number   | integer    | null: false                    |
+| phone_number   | string     | null: false                    |
 | note1          | string     |                                |
 | note2          | string     |                                |
 | user_id        | references | null: false, foreign_key: true |

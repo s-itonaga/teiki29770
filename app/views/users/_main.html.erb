@@ -2,7 +2,10 @@
   <ul id="menu">
     <li><a href="#">お客様管理</a>
       <ul>
-        <li><a href="#">お客様登録</a></li>
+        <li>
+          <%= link_to "お客様登録", new_customer_path %>
+          <%# <a href="#">お客様登録</a> %>
+        </li>
         <li><a href="#">お客様一覧</a></li>
         <li><a href="#">お客様検索</a></li>
       </ul>
@@ -35,13 +38,28 @@
       </ul>
     </li>
   </ul>
+  <a href="#">※下段は週次業務管理ボタン(月曜日〜金曜日)を設置予定</a>
 </div>
 
 <div class="main2">
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      作業内容
+    </div>
+    <div class="jikan">
+      作業終了日時
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      行った作業を一覧表示。(モデルに登録した時間で降順表示)文章をリンクにして内容紹介ページへリンク
+    </div>
+  </div>
+
 
   <div class="sagyou-ue">
     <div class="koumoku">
-      客注・定期
+      例)お客様管理
     </div>
     <div class="jikan">
       2020/10/20(Tue) 17:13:48
@@ -55,7 +73,7 @@
 
   <div class="sagyou-ue">
     <div class="koumoku">
-      客注・定期
+      例)お客様管理
     </div>
     <div class="jikan">
       2020/10/20(Tue) 17:48:28

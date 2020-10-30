@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2020_10_29_071112) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "family_name", null: false
     t.string "name", null: false
-    t.integer "phone_number", null: false
+    t.string "name_kana", null: false
+    t.string "phone_number", null: false
     t.string "note1"
     t.string "note2"
     t.integer "user_id"
