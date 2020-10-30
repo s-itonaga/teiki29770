@@ -1,16 +1,20 @@
 <div class="side1">
   <div class="side1-1">
-    <a href="#">雑誌総品案内</a>
-  </div>
-
-  <div class="side1-2">
-    <a href="#">登録</a>
+        <%= link_to current_user.name, edit_user_path(current_user) %>
   </div>
 </div>
 
 <div class="side2">
   <div class="side2-1">
-    <a href="#">客注・定期</a>
+    <a href="#">お客様管理</a>
+      <li>
+        <a halef="#">お客様登録</a>
+      </li>
+      <li>
+        <a halef="#">お客様編集</a>
+      </li>
+
+    
   </div>
 
     <div class="side2-1">

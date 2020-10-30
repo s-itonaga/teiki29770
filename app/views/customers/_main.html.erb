@@ -1,21 +1,40 @@
 <div class="main1">
-  <div class="main1-1">
-    <div class="tenpo-name">
-      <%= link_to current_user.name, edit_user_path(current_user) %>
-    </div>
-  </div>
-    <div class="main1-2">
-      <div class="main1-2-1">
-        <div class="tenpo-button">
-          <a href="#">ログイン</a>
-        </div>
-      </div>
-      <div class="main1-2-1">
-        <div class="tenpo-button">
-          <a href="#">新規登録</a>
-        </div>
-      </div>
-    </div>
+  <ul id="menu">
+    <li><a href="#">お客様管理</a>
+      <ul>
+        <li><a href="#">お客様登録</a></li>
+        <li><a href="#">お客様一覧</a></li>
+        <li><a href="#">お客様検索</a></li>
+      </ul>
+    </li>
+    <li><a href="#">入荷物管理</a>
+      <ul>
+        <li><a href="#">入荷物一覧</a></li>
+        <li><a href="#">入荷物検索</a></li>
+        <li><a href="#">お客様印刷</a></li>
+      </ul>
+    </li>
+    <li><a href="#">コミック発注</a>
+      <ul>
+        <li><a href="#">新刊追加</a></li>
+        <li><a href="#">新刊補充</a></li>
+      </ul>
+    </li>
+    <li><a href="#">POP作成</a>
+      <ul>
+        <li><a href="#">明日入荷分</a></li>
+        <li><a href="#">明後日入荷分</a></li>
+        <li><a href="#">来月予約</a></li>
+      </ul>
+    </li>
+    <li><a href="#">予備</a>
+      <ul>
+        <li><a href="#">予備１</a></li>
+        <li><a href="#">予備２</a></li>
+        <li><a href="#">予備３</a></li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
 <div class="main2">
