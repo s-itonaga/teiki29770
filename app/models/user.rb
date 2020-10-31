@@ -8,5 +8,7 @@ class User < ApplicationRecord
     validates :name
     validates :code, format: { with: /\A\d{8}\z/,       message: 'は半角数字8文字で入力してください' }
   end
-  
+
+  has_many :customers
+
 end

@@ -4,6 +4,9 @@ ja:
      user:
        name: 店舗名
        code: 日販ID
-     tweet:
-       text: テキスト
-       image: 画像
+     customer:
+       name: お客様名
+       name_kana: お客様名カナ
+       phone_number: 電話番号
+       note1: 備考１
+       note2: 備考２

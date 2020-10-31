@@ -1,0 +1,95 @@
+<div class="main1">
+  <ul id="menu">
+    <li><a href="#">お客様管理</a>
+      <ul>
+        <li>
+          <%= link_to "お客様登録", new_customer_path %>
+          <%# <a href="#">お客様登録</a> %>
+        </li>
+        <li><a href="#">お客様一覧</a></li>
+        <li><a href="#">お客様検索</a></li>
+      </ul>
+    </li>
+    <li><a href="#">入荷物管理</a>
+      <ul>
+        <li><a href="#">入荷物一覧</a></li>
+        <li><a href="#">入荷物検索</a></li>
+        <li><a href="#">お客様印刷</a></li>
+      </ul>
+    </li>
+    <li><a href="#">コミック発注</a>
+      <ul>
+        <li><a href="#">新刊追加</a></li>
+        <li><a href="#">新刊補充</a></li>
+      </ul>
+    </li>
+    <li><a href="#">POP作成</a>
+      <ul>
+        <li><a href="#">明日入荷分</a></li>
+        <li><a href="#">明後日入荷分</a></li>
+        <li><a href="#">来月予約</a></li>
+      </ul>
+    </li>
+    <li><a href="#">予備</a>
+      <ul>
+        <li><a href="#">予備１</a></li>
+        <li><a href="#">予備２</a></li>
+        <li><a href="#">予備３</a></li>
+      </ul>
+    </li>
+  </ul>
+  <a href="#">※下段は週次業務管理ボタン(月曜日〜金曜日)を設置予定</a>
+</div>
+
+<div class="main2">
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      作業内容
+    </div>
+    <div class="jikan">
+      作業終了日時
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      行った作業を一覧表示。(モデルに登録した時間で降順表示)文章をリンクにして内容紹介ページへリンク
+    </div>
+  </div>
+
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:13:48
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の新規登録を行いました。
+    </div>
+  </div>
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:48:28
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の編集を行いました。
+    </div>
+  </div>
+
+</div>
+
+<div class="main3">
+  <div class="form-input">
+    <input class="form-string" placeholder= "入荷物の検索を行います">
+  </div>
+  <input class="form-submit" type="submit" value="検索">
+</div>
