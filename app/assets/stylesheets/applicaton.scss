@@ -1,0 +1,10 @@
+.notifications {
+  text-align: center;
+  color: white;
+  .notice {
+    background-color: rgb(85, 192, 228);
+  }
+  .alert {
+    background-color: orange;
+  }
+}

@@ -10,7 +10,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      redirect_to root_path
+      redirect_to root_path, notice: "#{@customer.name}様を登録しました。"
     else
       render :new
     end
@@ -24,7 +24,16 @@ class CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
-      redirect_to root_path
+      redirect_to root_path, notice: "#{@customer.name}様を編集しました。"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @customer = Customer.find(params[:id])
+    if @customer.destroy
+      redirect_to root_path, notice: "#{@customer.name}様を削除しました。"
     else
       render :edit
     end
