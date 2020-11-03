@@ -10,3 +10,6 @@ ja:
        phone_number: 電話番号
        note1: 備考１
        note2: 備考２
+ time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

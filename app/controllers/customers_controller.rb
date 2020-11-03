@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   def index
+    @customers = Customer.all.order('created_at DESC')
   end
 
   def new
@@ -13,6 +14,10 @@ class CustomersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @customer = Customer.find(params[:id])
   end
 
   private
