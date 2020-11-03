@@ -65,6 +65,7 @@
   text-align: center;
   border: none;
   border-radius: 2px;
+  text-decoration: none;
 }
 .account-page input[type=submit] {
   float: left;
@@ -111,4 +112,38 @@
   margin: 0;
   padding: 0;
   font-size: 13px;
+}
+
+.customer_index_list {
+  margin-top: 20px;
+  color: #fff;
+  background-color: #253141;
+  border-radius: 3px;
+  padding: 5px 0 5px 20px;
+  transition    : 0.3s;
+}
+.customer_index_list a{
+  color: #fff;
+  text-decoration: none;
+}
+.customer_index_list_header {
+  font-size: 18px;
+}
+.customer_index_list_footer {
+  display: flex;
+  font-size: 12px;
+}
+.customer_index_list_footer_right{
+  padding-left: 10px;
+}
+.customer_index_list:hover {
+  margin-top: 20px;
+  background-color: #2F3E51;
+  border-radius: 3px;
+  padding: 5px 0 5px 20px;
+  transform:scale(1.03,1.03);
+  box-shadow    : 0 0 5px #000;
+}
+.customer_index_list:hover >a{
+  color: #e0dc62;
 }

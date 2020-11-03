@@ -3,30 +3,33 @@
     <div class='account-page__inner--left account-page__header'>
       <h2> Index Customer</h2>
       <h5>新規お客様の登録</h5>
-      <h5>作成順に表示</h5>
 
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
     </div>
-    <div class='account-page__inner--right user-form'>
-      <ul>
-        <% @customers.each do |customer| %>
-          <li>
-            <div>
-              <%= link_to edit_customer_path(customer.id), method: :get do %>
-                <div>
-                  <%= customer.name%>
-                </div>
-                <div>
-                  <%= customer.phone_number %>
-                </div>
-                <div>
-                  <%= l customer.created_at %>
-                </div>
-              <% end %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+    <div class='account-page__inner--right'>
+      <div >
+        <ul>
+          <% @customers.each do |customer| %>
+            <li>
+              <div class='customer_index_list'>
+                <%= link_to edit_customer_path(customer.id), method: :get do %>
+                  <div class='customer_index_list_header'>
+                    <%= customer.name%>
+                  </div>
+                  <div class='customer_index_list_footer'>
+                    <div class='customer_index_list_footer_left'>
+                      <%= customer.phone_number %>
+                    </div>
+                    <div class='customer_index_list_footer_right'>
+                      <%= l customer.created_at %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
