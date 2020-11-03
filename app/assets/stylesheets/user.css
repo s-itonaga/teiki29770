@@ -122,6 +122,7 @@
   padding: 5px 0 5px 20px;
   transition    : 0.3s;
   text-decoration: none;
+  list-style: none;
 }
 .customer_index_list a{
   color: #fff;
