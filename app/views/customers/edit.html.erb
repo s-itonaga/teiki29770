@@ -9,8 +9,8 @@
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
     </div>
     <div class='account-page__inner--right user-form'>
-      <%= form_with model: @customer, url: customers_path, local: true do |f|%>
-        <%# <%= render 'layouts/error_messages', model: f.object %> %>
+      <%= form_with model: @customer, url: customer_path, local: true do |f|%>
+        <%= render 'layouts/error_messages', model: f.object %>
         <div class='field'>
           <div class='field-label'>
             <%= f.label :お客様名%>
