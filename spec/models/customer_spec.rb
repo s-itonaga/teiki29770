@@ -23,7 +23,7 @@ RSpec.describe Customer, type: :model do
     end
 
     it "name_kanaがカタカナでなければ登録できないこと" do
-      @customer.name_kana = "やまだたろう"
+      @customer.name_kana = "ヤマダタロウ"
       @customer.valid?
       expect(@customer.errors.full_messages).to include("お客様名カナは全角カタカナで入力してください")
     end

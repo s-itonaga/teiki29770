@@ -35,6 +35,7 @@ class CustomersController < ApplicationController
     if @customer.destroy
       redirect_to root_path, notice: "#{@customer.name}様を削除しました。"
     else
+      fursh.now[:aleat] = '削除に失敗しました。'
       render :edit
     end
   end
