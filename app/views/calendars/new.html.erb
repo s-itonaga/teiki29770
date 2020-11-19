@@ -4,7 +4,7 @@
       <h2>Create Calendar</h2>
       <h5>新規入荷日の登録</h5>
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
-      <%= link_to "入荷日一覧画面へ", customers_path, class: 'btn'%>
+      <%= link_to "入荷日一覧画面へ", calendars_path, class: 'btn'%>
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: @calendar, url: calendars_path, local: true do |f|%>
