@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "users#index"
   resources :users, only: [:index, :edit, :update]
   resources :customers
+  resources :calendars
 end
