@@ -15,11 +15,11 @@
               <div class='customer_index_list'>
                 <%= link_to edit_calendar_path(calendar.id), method: :get do %>
                   <div class='customer_index_list_header'>
-                    <%= calendar.day%>
+                    <%= l calendar.day, format: :long %>
                   </div>
                   <div class='customer_index_list_footer'>
                     <div class='customer_index_list_footer_right'>
-                       登録日:<%= l calendar.created_at %>
+                       ・登録日:<%= l calendar.created_at %>
                     </div>
                   </div>
                 <% end %>
