@@ -1,5 +1,4 @@
 class CalendarsController < ApplicationController
-
   def index
     @calendars = Calendar.all.order('created_at DESC')
   end
@@ -16,7 +15,7 @@ class CalendarsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @calendar = Calendar.find(params[:id])
   end

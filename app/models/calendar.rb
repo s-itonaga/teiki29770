@@ -5,5 +5,4 @@ class Calendar < ApplicationRecord
   with_options presence: true do
     validates :day
   end
-
 end
