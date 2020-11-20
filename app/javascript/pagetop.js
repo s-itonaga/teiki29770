@@ -13,5 +13,10 @@ $(function(){
           $('#pagetop').slideUp(200);
       }
   }));
-
+  //
+  $('#pagetop').on("mouseover", function () {
+    $(this).css({ "background-color": "gray" });
+  }).on("mouseout", function () {
+    $(this).css({ "background-color": "#ccc" });
+  });
 });
