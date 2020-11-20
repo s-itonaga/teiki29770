@@ -1,0 +1,42 @@
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2> Index Stock</h2>
+      <h5><%= l @calendar.day, format: :long %>の入荷物一覧</h5>
+    </div>
+    <div class='account-page__inner--right'>
+      <%= link_to "お客様登録画面へ", new_customer_path,class: 'btn' %>
+      <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+    </div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>陳列</th>
+            <th>出版社名</th>
+            <th>雑誌名</th>
+            <th>冊数</th>
+            <th>本体価格</th>
+            <th>発行形態</th>
+            <th>買切雑誌</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @stocks.each do |stock| %>
+          <% if stock.num > 0 %>
+            <tr>
+              <td><%= stock.display %></td>
+              <td><%= stock.publisher %></td>
+              <td><%= stock.magazine_name %></td>
+              <td><%= stock.num %></td>
+              <td><%= stock.price %></td>
+              <td><%= stock.i_form %></td>
+              <td><%= stock.purchased %></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

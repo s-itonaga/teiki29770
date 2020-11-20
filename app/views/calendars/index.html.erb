@@ -13,7 +13,7 @@
           <% @calendars.each do |calendar| %>
             <li>
               <div class='customer_index_list'>
-                <%= link_to edit_calendar_path(calendar.id), method: :get do %>
+                <%= link_to calendar_stocks_path(calendar), method: :get do %>
                   <div class='customer_index_list_header'>
                     <%= l calendar.day, format: :long %>
                   </div>
