@@ -10,6 +10,8 @@ ja:
        phone_number: 電話番号
        note1: 備考１
        note2: 備考２
+     calendar:
+       day: 入荷日
  time:
     formats:
-      default: "%Y/%m/%d %H:%M:%S"
+      default: "%Y年%m月%d日 (%a) %H:%M"

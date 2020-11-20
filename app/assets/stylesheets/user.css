@@ -39,6 +39,9 @@
   background-color: #ccc;
   font-size: 14px;
 }
+.account-page .account-page__header .btn:hover {
+  background-color: gray;
+}
 .account-page .field {
   margin-bottom: 10px;
 }

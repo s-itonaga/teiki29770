@@ -1,0 +1,27 @@
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>Edit Calendar</h2>
+      <h5><%= l @calendar.day, format: :long %>から、入荷日の変更</h5>
+      <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+      <%= link_to "入荷日一覧画面へ", calendars_path, class: 'btn'%>
+    </div>
+    <div class='account-page__inner--right user-form'>
+      <%= form_with model: @calendar, url: calendar_path, local: true do |f|%>
+        <%= render 'layouts/error_messages', model: f.object %>
+        <div class='field'>
+            <h3>天龍の入荷予定日を確認してください</h3>
+          <div class='field-label'>
+            <%= f.label :入荷日%>
+          </div>
+          <div class='field-input'>
+            <%= f.date_field :day, autofocus: true%>
+          </div>
+        </div>
+        <div class='actions'>
+          <%= f.submit "登録", class: 'btn'%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

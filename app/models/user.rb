@@ -10,5 +10,5 @@ class User < ApplicationRecord
   end
 
   has_many :customers
-
+  has_many :calendars
 end

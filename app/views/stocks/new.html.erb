@@ -1,0 +1,26 @@
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>Create Stock</h2>
+      <h5><%= l @calendar.day, format: :long %>の入荷物登録</h5>
+      <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+      <%= link_to "入荷日一覧画面へ", calendars_path, class: 'btn'%>
+    </div>
+    <div class='account-page__inner--right user-form'>
+      <%= form_with url: import_calendar_stocks_path do |f| %>
+        <div class='field'>
+            <h3>日販のCSVファイルを入力してください</h3>
+          <div class='field-label'>
+            <%= f.label :入荷物%>
+          </div>
+          <div class='field-input'>
+            <%= f.file_field :file, accept: '.csv' %>
+          </div>
+        </div>
+        <div class='actions'>
+          <%= f.submit "登録", class: 'btn'%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

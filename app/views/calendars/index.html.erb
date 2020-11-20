@@ -1,28 +1,25 @@
 <div class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
-      <h2> Index Customer</h2>
-      <h5>お客様一覧</h5>
+      <h2> Index Calendar</h2>
+      <h5>入荷日一覧</h5>
 
-      <%= link_to "お客様登録画面へ", new_customer_path,class: 'btn' %>
+      <%= link_to "入荷日登録画面へ", new_calendar_path,class: 'btn' %>
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
     </div>
     <div class='account-page__inner--right'>
       <div >
         <ul>
-          <% @customers.each do |customer| %>
+          <% @calendars.each do |calendar| %>
             <li>
               <div class='customer_index_list'>
-                <%= link_to edit_customer_path(customer.id), method: :get do %>
+                <%= link_to calendar_stocks_path(calendar), method: :get do %>
                   <div class='customer_index_list_header'>
-                    <%= customer.name%>
+                    <%= l calendar.day, format: :long %>
                   </div>
                   <div class='customer_index_list_footer'>
-                    <div class='customer_index_list_footer_left'>
-                      <%= customer.phone_number %>
-                    </div>
                     <div class='customer_index_list_footer_right'>
-                      登録日:<%= l customer.created_at %>
+                       ・登録日:<%= l calendar.created_at %>
                     </div>
                   </div>
                 <% end %>
