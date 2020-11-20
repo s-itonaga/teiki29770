@@ -10,7 +10,8 @@ class StocksController < ApplicationController
   end
 
   def import
+    @calendar = Calendar.find(params[:calendar_id])
     Stock.import(params[:file],params[:calendar_id])
-    redirect_to root_path, notice: "Crops imported." 
+    redirect_to root_path, notice: "#{l @calendar.day, format: :long}の入荷物を登録しました。" 
   end
 end

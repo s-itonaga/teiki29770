@@ -2,7 +2,7 @@
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
       <h2>Edit Calendar</h2>
-      <h5>登録入荷日の変更</h5>
+      <h5><%= l @calendar.day, format: :long %>から、入荷日の変更</h5>
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
       <%= link_to "入荷日一覧画面へ", calendars_path, class: 'btn'%>
     </div>
