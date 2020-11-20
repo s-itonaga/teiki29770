@@ -1,44 +1,54 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
+<div class='stock-page'>
+  <div class='stock-page__inner'>
+    <div class='stock-page__inner--left stock-page__header'>
       <h2> Index Stock</h2>
       <h5><%= l @calendar.day, format: :long %>の入荷物一覧</h5>
     </div>
-    <div class='account-page__inner--right'>
-      <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
-      <%= link_to "入荷日登録画面へ", new_calendar_path,class: 'btn' %>
-      <%= link_to "入荷日変更画面へ", edit_calendar_path(@calendar.id),class: 'btn' %>
-      <%= link_to "入荷日削除画面へ", calendar_path(@calendar), method: :delete,class: 'btn' %>
+    <div class='stock-page__inner--right'>
+      <div class='stock-page__inner--right header'>
+        <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+        <%= link_to "入荷日一覧画面へ", calendars_path , class: 'btn'%>
+        <%= link_to "入荷日登録画面へ", new_calendar_path,class: 'btn' %>
+      </div>
+      <div class='stock-page__inner--right footer'>
+        <%= link_to "入荷日変更画面へ", edit_calendar_path(@calendar.id),class: 'btn' %>
+        <%= link_to "入荷物追加画面へ", new_calendar_stock_path(@calendar),class: 'btn' %>
+        <%= link_to "入荷日削除画面へ", calendar_path(@calendar), method: :delete,class: 'btn' %>
+      </div>
     </div>
-    <div>
-      <table>
-        <thead>
+  </div>
+  <div class='stock-page__inner stock-page__footer'>
+    <table>
+      <thead>
+        <tr>
+          <th>陳列</th>
+          <th>出版社名</th>
+          <th>雑誌名</th>
+          <th>冊数</th>
+          <th>本体価格</th>
+          <th>発行形態</th>
+          <th>買切雑誌</th>
+          <th>予約数</th>
+          <th>入荷日</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @stocks.each do |stock| %>
+        <% if stock.num > 0 %>
           <tr>
-            <th>陳列</th>
-            <th>出版社名</th>
-            <th>雑誌名</th>
-            <th>冊数</th>
-            <th>本体価格</th>
-            <th>発行形態</th>
-            <th>買切雑誌</th>
+            <td><%= stock.display %></td>
+            <td><%= stock.publisher %></td>
+            <td><%= stock.magazine_name %></td>
+            <td><%= stock.num %></td>
+            <td><%= stock.price.to_s(:delimited) %></td>
+            <td><%= stock.i_form %></td>
+            <td><%= stock.purchased %></td>
+            <td><%= stock.purchased %></td>
+            <td><%= stock.purchased %></td>
           </tr>
-        </thead>
-        <tbody>
-          <% @stocks.each do |stock| %>
-          <% if stock.num > 0 %>
-            <tr>
-              <td><%= stock.display %></td>
-              <td><%= stock.publisher %></td>
-              <td><%= stock.magazine_name %></td>
-              <td><%= stock.num %></td>
-              <td><%= stock.price %></td>
-              <td><%= stock.i_form %></td>
-              <td><%= stock.purchased %></td>
-            </tr>
-            <% end %>
           <% end %>
-        </tbody>
-      </table>
-    </div>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
