@@ -11,7 +11,7 @@ class CalendarsController < ApplicationController
   def create
     @calendar = Calendar.new(calendar_params)
     if @calendar.save
-      redirect_to new_calendar_stock_path(@calendar), notice: "#{@calendar.day}の入荷日を登録しました。"
+      redirect_to new_calendar_stock_path(@calendar), notice: "#{@calendar.day}の入荷日を登録しました。続けて入荷物を登録してください。"
     else
       render :new
     end
@@ -24,7 +24,7 @@ class CalendarsController < ApplicationController
   def update
     @calendar = Calendar.find(params[:id])
     if @calendar.update(calendar_params)
-      redirect_to root_path, notice: "#{@calendar.day}の入荷日を編集しました。"
+      redirect_to root_path, notice: "#{@calendar.day}に入荷日を変更しました。"
     else
       render :edit
     end

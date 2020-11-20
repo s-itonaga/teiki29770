@@ -1,6 +1,6 @@
 class Calendar < ApplicationRecord
   belongs_to :user
-  has_many :stocks
+  has_many :stocks, dependent: :destroy
 
   with_options presence: true do
     validates :day

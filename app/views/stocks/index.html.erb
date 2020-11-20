@@ -5,8 +5,10 @@
       <h5><%= l @calendar.day, format: :long %>の入荷物一覧</h5>
     </div>
     <div class='account-page__inner--right'>
-      <%= link_to "お客様登録画面へ", new_customer_path,class: 'btn' %>
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+      <%= link_to "入荷日登録画面へ", new_calendar_path,class: 'btn' %>
+      <%= link_to "入荷日変更画面へ", edit_calendar_path(@calendar.id),class: 'btn' %>
+      <%= link_to "入荷日削除画面へ", calendar_path(@calendar), method: :delete,class: 'btn' %>
     </div>
     <div>
       <table>
