@@ -12,13 +12,13 @@
         <ul>
           <% @calendars.each do |calendar| %>
             <li>
-              <div class='customer_index_list'>
+              <div class='calendar_index_list <%= wday_color(calendar) %>'>
                 <%= link_to calendar_stocks_path(calendar), method: :get do %>
-                  <div class='customer_index_list_header'>
+                  <div class='calendar_index_list_header'>
                     <%= l calendar.day, format: :long %>
                   </div>
-                  <div class='customer_index_list_footer'>
-                    <div class='customer_index_list_footer_right'>
+                  <div class='calendar_index_list_footer'>
+                    <div class='calendar_index_list_footer_right'>
                        ・登録日:<%= l calendar.created_at %>
                     </div>
                   </div>

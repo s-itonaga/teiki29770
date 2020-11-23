@@ -1,0 +1,55 @@
+.calendar_index_list {
+  margin-top: 20px;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px 0 5px 20px;
+  transition    : 0.3s;
+  text-decoration: none;
+}
+.red {
+  background-color: #7b0050;
+}
+.blue {
+  background-color: #23466e;
+}
+.gray {
+  background-color: #253141;
+}
+
+.calendar_index_list ul {
+  list-style: none;
+}
+.calendar_index_list a{
+  color: #fff;
+  text-decoration: none;
+}
+.calendar_index_list_header {
+  font-size: 18px;
+}
+.calendar_index_list_footer {
+  display: flex;
+  font-size: 12px;
+}
+.calendar_index_list_footer_right{
+  padding-left: 10px;
+}
+.calendar_index_list:hover {
+  margin-top: 20px;
+  border-radius: 3px;
+  padding: 5px 0 5px 20px;
+  transform:scale(1.03,1.03);
+  box-shadow    : 0 0 5px #000;
+}
+.red:hover {
+  background-color: #a8006d;
+}
+.blue:hover {
+  background-color: #4d639f;
+}
+.gray:hover {
+  background-color: #2F3E51;
+}
+
+.calendar_index_list:hover a{
+  color: #e0dc62;
+}

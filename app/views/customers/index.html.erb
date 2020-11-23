@@ -15,11 +15,11 @@
               <div class='customer_index_list'>
                 <%= link_to edit_customer_path(customer.id), method: :get do %>
                   <div class='customer_index_list_header'>
-                    <%= customer.name%>
+                    <%= customer.name%> 様
                   </div>
                   <div class='customer_index_list_footer'>
                     <div class='customer_index_list_footer_left'>
-                      <%= customer.phone_number %>
+                      電話番号:<%= customer.phone_number %>
                     </div>
                     <div class='customer_index_list_footer_right'>
                       登録日:<%= l customer.created_at %>
