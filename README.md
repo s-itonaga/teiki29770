@@ -101,7 +101,7 @@ https://docs.google.com/spreadsheets/d/1N6YRz5M5a9-4LwM_WK32WU7mPP6Rz-ns33XX0BXs
 ### Association
 
 - has_many :customer
-- has_many :product
+- has_many :calendar
 
 ## customer テーブル
 
@@ -117,7 +117,7 @@ https://docs.google.com/spreadsheets/d/1N6YRz5M5a9-4LwM_WK32WU7mPP6Rz-ns33XX0BXs
 ### Association
 
 - belongs_to :user
-- has_one    :product
+- has_many   :product
 
 ## product テーブル
 
@@ -126,7 +126,6 @@ https://docs.google.com/spreadsheets/d/1N6YRz5M5a9-4LwM_WK32WU7mPP6Rz-ns33XX0BXs
 | name        | string     |                                |
 | z_code      | integer    | null: false                    |
 | num         | integer    | null: false                    |
-| user_id     | references | null: false, foreign_key: true |
 | customer_id | references | null: false, foreign_key: true |
 
 ### Association
@@ -134,31 +133,47 @@ https://docs.google.com/spreadsheets/d/1N6YRz5M5a9-4LwM_WK32WU7mPP6Rz-ns33XX0BXs
 - belongs_to :user
 - belongs_to :customer
 
+## calendar テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| day           | date       | null: false                    |
+| user_id       | integer    | null: false                    |
+
+### Association
+
+- belongs_to :user
+- has_many   :stock
 
 ## stock テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| code          | integer    |                                |
-| ctiy          | string     | null: false                    |
-| tenpo_name    | string     | null: false                    |
-| category      | string     | null: false                    |
-| z_code        | integer    | null: false                    |
-| z1            | integer    | null: false                    |
-| z2            | integer    | null: false                    |
-| z3            | integer    | null: false                    |
-| publisher     | string     | null: false                    |
-| z_name        | string     | null: false                    |
-| nyuka_num     | integer    | null: false                    |
-| price         | integer    | null: false                    |
-| note          | string     | null: false                    |
-| s_code        | integer    | null: false                    |
-| form          | string     | null: false                    |
-| size          | string     | null: false                    |
-| bundles       | integer    | null: false                    |
-| fraction      | integer    | null: false                    |
-| user_id       | references | null: false, foreign_key: true |
+| store_code    | string     |                                |
+| district      | string     |                                |
+| store_name    | string     |                                |
+| delivery_date | date       |                                |
+| display       | string     |                                |
+| magazine_code | string     |                                |
+| v1            | string     |                                |
+| v2            | string     |                                |
+| v3            | string     |                                |
+| publisher     | string     |                                |
+| magazine_name | string     |                                |
+| num           | integer    |                                |
+| price         | integer    |                                |
+| special       | string     |                                |
+| reservation   | integer    |                                |
+| slip          | string     |                                |
+| product_code  | string     |                                |
+| i_form        | string     |                                |
+| format        | string     |                                |
+| bundle        | string     |                                |
+| fraction      | string     |                                |
+| isbn          | string     |                                |
+| purchased     | string     |                                |
+| calendar_id   | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user
+- belongs_to :calendar
