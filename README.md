@@ -126,6 +126,7 @@ https://docs.google.com/spreadsheets/d/1N6YRz5M5a9-4LwM_WK32WU7mPP6Rz-ns33XX0BXs
 | name        | string     |                                |
 | z_code      | integer    | null: false                    |
 | num         | integer    | null: false                    |
+| release     | string     | null: false                    |
 | customer_id | references | null: false, foreign_key: true |
 
 ### Association
