@@ -1,1 +1,51 @@
-<h5><%=@customer.name%>様の取り置き商品登録
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>Create Product</h2>
+      <h5><%=@customer.name%>様の取置商品登録</h5>
+      <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+      <%= link_to "お客様一覧画面へ", customers_path, class: 'btn'%>
+    </div>
+    <div class='account-page__inner--right user-form'>
+      <%= form_with model: [@customer, @product], url: customer_products_path, local: true do |f|%>
+        <%= render 'layouts/error_messages', model: f.object %>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :商品名%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :name, placeholder:"例）少年ジャンプ"%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :雑誌コード%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :z_code, placeholder:"例）29931", autofocus: true%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :取置冊数%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :num, placeholder:"例）1",maxlength:"11"%>
+
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :発売日%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :release, placeholder:"例）月曜日", maxlength:"10"%>
+          </div>
+        </div>
+        <div class='actions'>
+          <%= f.submit "登録", class: 'btn'%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
