@@ -1,1 +1,40 @@
-<h5><%=@customer.name%>様の取り置き商品一覧
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2> Index Products</h2>
+      <h5><%=@customer.name%>様の取置商品一覧</h5>
+
+      <%= link_to "お客様登録画面へ", new_customer_path,class: 'btn' %>
+      <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+    </div>
+    <div class='account-page__inner--right'>
+      <div >
+        <ul>
+          <% @products.each do |product| %>
+            <li>
+              <div class='customer_index_list'>
+                <%= link_to edit_customer_product_path(@customer, @customer.products.ids), method: :get do %>
+                  <div class='customer_index_list_header'>
+                    <%= product.name%> 
+                  </div>
+                  <div class='customer_index_list_footer'>
+                    <div class='customer_index_list_footer_left'>
+                      取置冊数:<%= product.num %>
+                    </div>
+                    <div class='customer_index_list_footer_right'>
+                      登録日:<%= l product.created_at %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pagetop">
+  <a>ページトップ</a>
+</div>

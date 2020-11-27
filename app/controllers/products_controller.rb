@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @customer = Customer.find(params[:customer_id])
-    @produsts = @customer.products
+    @products = @customer.products.all.order('created_at DESC')
   end
 
   def new
@@ -18,6 +18,22 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @customer = Customer.find(params[:customer_id])
+    @product = @customer.products.find(params[:id])
+  end
+
+  def update
+    @customer = Customer.find(params[:customer_id])
+    @product = @customer.products.find(params[:id])
+    if @product.update(product_params)
+      redirect_to root_path, notice: "#{@customer.name}様の取置商品を編集しました。"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def product_params
