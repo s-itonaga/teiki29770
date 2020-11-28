@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'users#index'
   resources :users, only: %i[index edit update]
   resources :customers do
-    resources :products
+    resources :products do
+      collection { post :import }
+    end
   end
   resources :calendars do
     resources :stocks do

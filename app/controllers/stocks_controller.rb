@@ -2,6 +2,7 @@ class StocksController < ApplicationController
   def index
     @calendar = Calendar.find(params[:calendar_id])
     @stocks = @calendar.stocks
+    @products = Product.all
   end
 
   def new

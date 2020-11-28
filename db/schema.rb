@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 2020_11_25_090344) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "z_code", null: false
-    t.integer "num", null: false
-    t.string "release", null: false
+    t.string "name", comment: "雑誌名"
+    t.integer "z_code", null: false, comment: "雑誌コード"
+    t.integer "num", null: false, comment: "発売日"
+    t.string "release", null: false, comment: "取置冊数"
     t.bigint "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

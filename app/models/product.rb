@@ -7,4 +7,20 @@ class Product < ApplicationRecord
     validates :release
   end
 
+  def self.import(file, customer)
+    CSV.foreach(file.path, encoding: 'Shift_JIS:UTF-8', headers: true) do |row|
+      product = find_by(id: row['id']) || new
+      row_hash = row.to_hash.slice(*CSV_HEADER.keys)
+      product.attributes = row_hash.transform_keys(&CSV_HEADER.method(:[]))
+      product['customer_id'] = customer
+      product.save
+    end
+  end
+
+  CSV_HEADER = {
+    '雑誌名' => 'name',
+    '雑誌コード' => 'z_code',
+    '発売日' => 'num',
+    '取置冊数' => 'release'
+  }.freeze
 end

@@ -4,9 +4,12 @@
       <h2>Edit Customer</h2>
       <h5><%=@customer.name%>様の情報を編集</h5>
       <%= link_to "取置商品登録画面", new_customer_product_path(@customer), class: 'btn'%>
+      <br>
       <%= link_to "取置商品一覧画面", customer_products_path(@customer), class: 'btn'%>
+      <br>
       <%= link_to "お客様一覧画面へ", customers_path, class: 'btn'%>
       <%= link_to "お客様情報を削除", customer_path(@customer.id), method: :delete, class: 'btn'%>
+      <br>
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
 
     </div>

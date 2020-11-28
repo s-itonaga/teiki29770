@@ -3,8 +3,26 @@
     <div class='account-page__inner--left account-page__header'>
       <h2>Create Product</h2>
       <h5><%=@customer.name%>様の取置商品登録</h5>
-      <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+      <%= link_to "お客様情報画面へ", edit_customer_path(@customer.id), class: 'btn'%>
       <%= link_to "お客様一覧画面へ", customers_path, class: 'btn'%>
+      <br>
+      <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+        <%= form_with url: import_customer_products_path do |f| %>
+        <div class='field'>
+        <h3>一括登録用のCSVファイルがある場合はこちら</h3>
+          <div>
+            <%= f.label :取置商品リスト%>
+          </div>
+          <div>
+            <%= f.file_field :file%>
+          </div>
+        </div>
+        <div>
+          <%= f.submit "登録"%>
+        </div>
+      </div>
+    <% end %>
+
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: [@customer, @product], url: customer_products_path, local: true do |f|%>

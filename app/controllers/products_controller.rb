@@ -34,6 +34,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def import
+    @customer = Customer.find(params[:customer_id])
+    Product.import(params[:file], params[:customer_id])
+    redirect_to root_path, notice: "#{@customer.name}様の取り置き商品を一括登録しました。"
+  end
+
   private
 
   def product_params
