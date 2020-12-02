@@ -1,30 +1,31 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
+<div class='product-page' id='product-page'>
+  <div class='product-page__inner'>
+    <div class='product-page__inner--left product-page__header'>
       <h2>Create Product</h2>
       <h5><%=@customer.name%>様の取置商品登録</h5>
       <%= link_to "お客様情報画面へ", edit_customer_path(@customer.id), class: 'btn'%>
       <%= link_to "お客様一覧画面へ", customers_path, class: 'btn'%>
       <br>
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+      <div class='product-page__inner--left product-page__footer'>
         <%= form_with url: import_customer_products_path do |f| %>
-        <div class='field'>
-        <h3>一括登録用のCSVファイルがある場合はこちら</h3>
-          <div>
-            <%= f.label :取置商品リスト%>
+          <div class='field'>
+            <h6>一括登録用のCSVファイルがある場合はこちら</h6>
+            <div class='field-label'>
+              <%= f.label :取置商品リスト%>
+            </div>
+            <div class='field-input'>
+              <%= f.file_field :file%>
+            </div>
           </div>
-          <div>
-            <%= f.file_field :file%>
+          <div class='actions'>
+            <%= f.submit "登録", class: 'btn'%>
           </div>
-        </div>
-        <div>
-          <%= f.submit "登録"%>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-
     </div>
-    <div class='account-page__inner--right user-form'>
+
+    <div class='product-page__inner--right user-form'>
       <%= form_with model: [@customer, @product], url: customer_products_path, local: true do |f|%>
         <%= render 'layouts/error_messages', model: f.object %>
         <div class='field'>
@@ -49,7 +50,6 @@
           </div>
           <div class='field-input'>
             <%= f.text_field :num, placeholder:"例）1",maxlength:"11"%>
-
           </div>
         </div>
         <div class='field'>
@@ -63,7 +63,7 @@
         <div class='actions'>
           <%= f.submit "登録", class: 'btn'%>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

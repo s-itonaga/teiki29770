@@ -13,7 +13,7 @@
           <% @products.each do |product| %>
             <li>
               <div class='customer_index_list'>
-                <%= link_to edit_customer_product_path(@customer, @customer.products.ids), method: :get do %>
+                <%= link_to edit_customer_product_path(@customer, product.id), method: :get do %>
                   <div class='customer_index_list_header'>
                     定期 : <%= product.name%> 
                   </div>

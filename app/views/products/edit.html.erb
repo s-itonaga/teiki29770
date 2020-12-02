@@ -3,6 +3,7 @@
     <div class='account-page__inner--left account-page__header'>
       <h2>Edit Product</h2>
       <h5><%=@customer.name%>様の取置商品編集</h5>
+      <%= link_to "お客様取置一覧へ", customer_products_path(@customer), class: 'btn'%>
       <%= link_to "お客様一覧画面へ", customers_path, class: 'btn'%>
       <%= link_to "取置商品登録画面", new_customer_product_path(@customer), class: 'btn'%>
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
