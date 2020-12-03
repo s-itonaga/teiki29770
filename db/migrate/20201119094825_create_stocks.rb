@@ -6,7 +6,7 @@ class CreateStocks < ActiveRecord::Migration[6.0]
       t.string  :store_name,    comment: '書店名'
       t.date    :delivery_date, comment: '送品日付'
       t.string  :display,       comment: '陳列'
-      t.string  :magazine_code, comment: '雑誌コード'
+      t.integer :magazine_code, comment: '雑誌コード'
       t.string  :v1,            comment: '号数'
       t.string  :v2,            comment: '日付'
       t.string  :v3,            comment: '年'

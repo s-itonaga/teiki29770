@@ -34,18 +34,25 @@
       </thead>
       <tbody>
         <% @stocks.each do |stock| %>
-        <% if stock.num > 0 %>
-          <tr>
-            <td><%= stock.display %></td>
-            <td><%= stock.publisher %></td>
-            <td><%= stock.magazine_name %></td>
-            <td><%= stock.num %></td>
-            <td><%= stock.price.to_s(:delimited) %></td>
-            <td><%= stock.i_form %></td>
-            <td><%= stock.purchased %></td>
-            <td><%= stock.purchased %></td>
-            <td><%= stock.purchased %></td>
-          </tr>
+          <% if stock.num > 0 %>
+            <% num = 0 %>
+            <% release = "" %>
+            <% check = Product.where(z_code: stock.magazine_code.to_i) %>
+              <% if check.present? %>
+                <% num += (check.to_a)[0].num %>
+                <% release = (check.to_a)[0].release %>
+              <% end %>
+                <tr>
+                  <td><%= stock.display %></td>
+                  <td><%= stock.publisher %></td>
+                  <td><%= stock.magazine_name %></td>
+                  <td><%= stock.num %></td>
+                  <td><%= stock.price.to_s(:delimited) %></td>
+                  <td><%= stock.i_form %></td>
+                  <td><%= stock.purchased %></td>
+                  <td><%= num %></td>
+                  <td><%= release %></td>
+                </tr>
           <% end %>
         <% end %>
       </tbody>

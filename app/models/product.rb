@@ -20,7 +20,7 @@ class Product < ApplicationRecord
   CSV_HEADER = {
     '雑誌名' => 'name',
     '雑誌コード' => 'z_code',
-    '発売日' => 'num',
-    '取置冊数' => 'release'
+    '取置冊数' => 'num',
+    '発売日' => 'release'
   }.freeze
 end

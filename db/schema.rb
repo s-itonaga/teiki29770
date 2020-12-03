@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 2020_11_25_090344) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", comment: "雑誌名"
     t.integer "z_code", null: false, comment: "雑誌コード"
-    t.integer "num", null: false, comment: "発売日"
-    t.string "release", null: false, comment: "取置冊数"
+    t.integer "num", null: false, comment: "取置冊数"
+    t.string "release", null: false, comment: "発売日"
     t.bigint "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_090344) do
     t.string "store_name", comment: "書店名"
     t.date "delivery_date", comment: "送品日付"
     t.string "display", comment: "陳列"
-    t.string "magazine_code", comment: "雑誌コード"
+    t.integer "magazine_code", comment: "雑誌コード"
     t.string "v1", comment: "号数"
     t.string "v2", comment: "日付"
     t.string "v3", comment: "年"
