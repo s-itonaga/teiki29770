@@ -37,10 +37,13 @@
           <% if stock.num > 0 %>
             <% num = 0 %>
             <% release = "" %>
-            <% check = Product.where(z_code: stock.magazine_code.to_i) %>
-              <% if check.present? %>
-                <% num += (check.to_a)[0].num %>
-                <% release = (check.to_a)[0].release %>
+            <% css_class = "" %>
+            <% checks = Product.where(z_code: stock.magazine_code.to_i) %>
+              <% if checks.present? %>
+                <% (checks.to_a).each do |check| %>
+                  <% num += check.num %>
+                <% end %>
+                <% release = (checks.to_a)[0].release %>
               <% end %>
                 <tr>
                   <td><%= stock.display %></td>
