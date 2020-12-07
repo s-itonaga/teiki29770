@@ -7,7 +7,7 @@
       <%= link_to "入荷日一覧画面へ", calendars_path, class: 'btn'%>
     </div>
     <div class='account-page__inner--right user-form'>
-      <%= form_with url: import_calendar_stocks_path do |f| %>
+      <%= form_with url: csv_import_calendar_stocks_path do |f| %>
         <div class='field'>
             <h3>日販のCSVファイルを入力してください</h3>
           <div class='field-label'>

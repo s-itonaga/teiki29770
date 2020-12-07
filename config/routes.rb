@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   resources :calendars do
     resources :stocks do
-      collection { post :import }
+      collection { post :csv_import }
     end
   end
 end

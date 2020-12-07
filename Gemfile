@@ -67,3 +67,5 @@ gem 'rails-i18n'
 gem 'devise'
 
 gem 'roo'
+
+gem 'activerecord-import'

@@ -9,9 +9,9 @@ class StocksController < ApplicationController
     @calendar = Calendar.find(params[:calendar_id])
   end
 
-  def import
+  def csv_import
     @calendar = Calendar.find(params[:calendar_id])
-    Stock.import(params[:file], params[:calendar_id])
+    Stock.csv_import(params[:file], params[:calendar_id])
     redirect_to root_path, notice: "#{l @calendar.day, format: :long}の入荷物を登録しました。"
   end
 end

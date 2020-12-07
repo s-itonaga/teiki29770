@@ -1,14 +1,17 @@
 class Stock < ApplicationRecord
   belongs_to :calendar
 
-  def self.import(file, calendar)
+  def self.csv_import(file, calendar)
+    stocks = []
     CSV.foreach(file.path, headers: true) do |row|
+      stock = Stock.new
       stock = find_by(id: row['id']) || new
       row_hash = row.to_hash.slice(*CSV_HEADER.keys)
       stock.attributes = row_hash.transform_keys(&CSV_HEADER.method(:[]))
       stock['calendar_id'] = calendar
-      stock.save
+      stocks << stock
     end
+    Stock.import stocks
   end
 
   CSV_HEADER = {
