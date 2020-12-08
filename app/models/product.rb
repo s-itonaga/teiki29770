@@ -7,14 +7,17 @@ class Product < ApplicationRecord
     validates :release
   end
 
-  def self.import(file, customer)
+  def self.csv_import(file, customer)
+    products = []
     CSV.foreach(file.path, encoding: 'Shift_JIS:UTF-8', headers: true) do |row|
+      product = Product.new
       product = find_by(id: row['id']) || new
       row_hash = row.to_hash.slice(*CSV_HEADER.keys)
       product.attributes = row_hash.transform_keys(&CSV_HEADER.method(:[]))
       product['customer_id'] = customer
-      product.save
+      products << product
     end
+    Product.import products
   end
 
   CSV_HEADER = {

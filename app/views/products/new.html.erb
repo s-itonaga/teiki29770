@@ -8,7 +8,7 @@
       <br>
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
       <div class='product-page__inner--left product-page__footer'>
-        <%= form_with url: import_customer_products_path do |f| %>
+        <%= form_with url: csv_import_customer_products_path do |f| %>
           <div class='field'>
             <h6>一括登録用のCSVファイルがある場合はこちら</h6>
             <div class='field-label'>

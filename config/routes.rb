@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[index edit update]
   resources :customers do
     resources :products do
-      collection { post :import }
+      collection { post :csv_import }
     end
   end
   resources :calendars do
