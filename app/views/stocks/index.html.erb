@@ -21,15 +21,15 @@
     <table>
       <thead>
         <tr>
-          <th>陳列</th>
-          <th>出版社名</th>
-          <th>雑誌名</th>
-          <th>冊数</th>
-          <th>本体価格</th>
-          <th>発行形態</th>
-          <th>買切雑誌</th>
-          <th>予約数</th>
-          <th>入荷日</th>
+          <th scope="col"><%= sort_order "display", "陳列" %></th>
+          <th scope="col"><%= sort_order "publisher", "出版社名" %></th>
+          <th scope="col"><%= sort_order "magazine_name", "雑誌名" %></th>
+          <th scope="col"><%= sort_order "num", "冊数" %></th>
+          <th scope="col"><%= sort_order "price", "本体価格" %></th>
+          <th scope="col"><%= sort_order "i_form", "発行形態" %></th>
+          <th scope="col"><%= sort_order "purchased", "買切雑誌" %></th>
+          <th scope="col">予約数</th>
+          <th scope="col">入荷日</th>
         </tr>
       </thead>
       <tbody>
