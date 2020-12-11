@@ -62,8 +62,13 @@
 .stock-page thead tr th{
   padding: 3px 0 3px 5px;
 }
+.stock-page tbody tr:nth-child(2n){
+  background-color: #ddd;
+}
+.stock-page tbody tr:hover{
+  background-color: gray;
+}
 .stock-page tbody tr td{
   padding-left: 5px;
-  border-bottom: 1px solid #ddd;
 }
 
