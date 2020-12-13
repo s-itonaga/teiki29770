@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @customer = Customer.find(params[:customer_id])
-    @products = @customer.products.all.order('created_at DESC')
+    @products = @customer.products.all.page(params[:page]).per(20).order('created_at DESC')
   end
 
   def new

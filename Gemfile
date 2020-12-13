@@ -69,3 +69,5 @@ gem 'devise'
 gem 'roo'
 
 gem 'activerecord-import'
+
+gem 'kaminari'

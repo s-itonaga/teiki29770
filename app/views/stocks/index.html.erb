@@ -3,6 +3,7 @@
     <div class='stock-page__inner--left stock-page__header'>
       <h2> Index Stock</h2>
       <h5><%= l @calendar.day, format: :long %>の入荷物一覧</h5>
+      <%= paginate @stocks %>
     </div>
     <div class='stock-page__inner--right'>
       <div class='stock-page__inner--right header'>
