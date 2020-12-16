@@ -35,29 +35,28 @@
       </thead>
       <tbody>
         <% @stocks.each do |stock| %>
-          <% if stock.num > 0 %>
-            <% num = 0 %>
-            <% release = "" %>
-            <% css_class = "" %>
-            <% checks = Product.where(z_code: stock.magazine_code.to_i) %>
-              <% if checks.present? %>
-                <% (checks.to_a).each do |check| %>
-                  <% num += check.num %>
-                <% end %>
-                <% release = (checks.to_a)[0].release %>
+          <% num = 0 %>
+          <% release = "" %>
+          <% css_class = "" %>
+          <% checks = Product.where(z_code: stock.magazine_code.to_i) %>
+            <% if checks.present? %>
+              <% (checks.to_a).each do |check| %>
+                <% num += check.num %>
               <% end %>
-                <tr>
-                  <td><%= stock.display %></td>
-                  <td><%= stock.publisher %></td>
-                  <td><%= stock.magazine_name %></td>
-                  <td><%= stock.num %></td>
-                  <td><%= stock.price.to_s(:delimited) %></td>
-                  <td><%= stock.i_form %></td>
-                  <td><%= stock.purchased %></td>
-                  <td><%= num %></td>
-                  <td><%= release %></td>
-                </tr>
-          <% end %>
+              <% release = (checks.to_a)[0].release %>
+              <% css_class = "color-red" %>
+            <% end %>
+              <tr class='<%= css_class%>' >
+                <td><%= stock.display %></td>
+                <td><%= stock.publisher %></td>
+                <td><%= stock.magazine_name %></td>
+                <td><%= stock.num %></td>
+                <td><%= stock.price.to_s(:delimited) %></td>
+                <td><%= stock.i_form %></td>
+                <td><%= stock.purchased %></td>
+                <td><%= num %></td>
+                <td><%= release %></td>
+              </tr>
         <% end %>
       </tbody>
     </table>

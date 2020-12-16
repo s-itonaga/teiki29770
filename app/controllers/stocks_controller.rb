@@ -3,7 +3,7 @@ class StocksController < ApplicationController
 
   def index
     @calendar = Calendar.find(params[:calendar_id])
-    @stocks = @calendar.stocks.page(params[:page]).per(100).order("#{sort_column} #{sort_direction}")
+    @stocks = @calendar.stocks.where("num > ?",0).page(params[:page]).order("#{sort_column} #{sort_direction}")
     @products = Product.all
   end
 
