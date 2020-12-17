@@ -1,0 +1,42 @@
+.pagination{
+  display: flex;
+}
+.first,.last,.next,.prev{
+  color: #fff;
+  background-color: #ccc;
+  font-size: 14px;
+  display: inline-block;
+  height: 25px;
+  margin: 1px;
+  padding: 1px 5px;
+  line-height: 25px;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.first,.last{width: 50px;}
+.next,.prev{width: 35px;}
+
+.page{
+  height: 25px;
+  width: 25px;
+  line-height: 26px;
+  text-align: center;
+  margin: 1px;
+  background-color: #ccc;
+  border-radius: 2px;
+  font-size: 14px;
+}
+.page a{
+  text-decoration: none;
+  color: #fff;
+}
+.first:hover, .page:hover, .last:hover, .next:hover, .prev:hover {
+  background-color: gray;
+}
+.current{
+  border-radius: 50%;
+  background-color: gray;
+  color: #fff;
+}

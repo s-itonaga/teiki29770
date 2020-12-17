@@ -6,7 +6,7 @@
 
       <%= link_to "お客様登録画面へ", new_customer_path,class: 'btn' %>
       <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
-      <%= paginate @products %>
+      <%= paginate(@products, :window => 2) %>
     </div>
     <div class='account-page__inner--right'>
       <div >
