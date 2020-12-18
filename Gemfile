@@ -71,3 +71,5 @@ gem 'roo'
 gem 'activerecord-import'
 
 gem 'kaminari'
+
+gem 'ransack'
