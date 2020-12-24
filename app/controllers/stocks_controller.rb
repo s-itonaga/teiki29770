@@ -3,7 +3,13 @@ class StocksController < ApplicationController
 
   def index
     @calendar = Calendar.find(params[:calendar_id])
-    @stocks = @calendar.stocks.where("num > ?",0).page(params[:page]).order("#{sort_column} #{sort_direction}")
+    @stocks = @calendar.stocks.where("num > ?",0).order("#{sort_column} #{sort_direction}").page(params[:page])
+    @products = Product.all
+  end
+
+  def search
+    @q = Stock.search(search_params)
+    @stocks = @q.result.includes(:calendar).order("#{sort_column} #{sort_direction}").page(params[:page])
     @products = Product.all
   end
 
@@ -25,6 +31,10 @@ class StocksController < ApplicationController
 
   def sort_column
     Stock.column_names.include?(params[:sort]) ? params[:sort] : 'id'
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
 
 end

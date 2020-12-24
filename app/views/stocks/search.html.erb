@@ -1,0 +1,67 @@
+<div class='stock-page'>
+  <div class='stock-page__inner'>
+    <div class='stock-page__inner--left stock-page__header'>
+      <h2> Index Stock</h2>
+      <h5>入荷物一覧</h5>
+      <div class=pagination>
+      </div>
+    </div>
+    <div class='stock-page__inner--right'>
+      <div class='stock-page__inner--right header'>
+        <%= link_to "メイン画面に戻る", root_path, class: 'btn'%>
+        <%= link_to "入荷日一覧画面へ", calendars_path , class: 'btn'%>
+        <%= link_to "入荷日登録画面へ", new_calendar_path,class: 'btn' %>
+      </div>
+      <div class='stock-page__inner--right footer'>
+      </div>
+    </div>
+  </div>
+  <%= paginate(@stocks, :window => 2)%>
+  <div class='stock-page__inner stock-page__footer'>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col"><%= sort_order "display", "陳列" %></th>
+          <th scope="col"><%= sort_order "publisher", "出版社名" %></th>
+          <th scope="col"><%= sort_order "magazine_name", "雑誌名" %></th>
+          <th scope="col"><%= sort_order "num", "冊数" %></th>
+          <th scope="col"><%= sort_order "price", "本体価格" %></th>
+          <th scope="col"><%= sort_order "i_form", "発行形態" %></th>
+          <th scope="col"><%= sort_order "purchased", "買切雑誌" %></th>
+          <th scope="col">予約数</th>
+          <th scope="col">入荷日</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @stocks.each do |stock| %>
+          <% num = 0 %>
+          <% release = "" %>
+          <% css_class = "" %>
+          <% checks = Product.where(z_code: stock.magazine_code.to_i) %>
+            <% if checks.present? %>
+              <% (checks.to_a).each do |check| %>
+                <% num += check.num %>
+              <% end %>
+              <% release = (checks.to_a)[0].release %>
+              <% css_class = "color-red" %>
+            <% end %>
+              <tr class='<%= css_class%>' >
+                <td><%= stock.display %></td>
+                <td><%= stock.publisher %></td>
+                <td><%= stock.magazine_name %></td>
+                <td><%= stock.num %></td>
+                <td><%= stock.price.to_s(:delimited) %></td>
+                <td><%= stock.i_form %></td>
+                <td><%= stock.purchased %></td>
+                <td><%= num %></td>
+                <td><%= release %></td>
+              </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="pagetop">
+  <a>ページトップ</a>
+</div>

@@ -170,15 +170,15 @@ display: flex;
   background-color: #DDDDDD;
   height: 90px;
   padding: 20px 40px;
-  display: flex;
 }
 
-.form-input {
-  background-color: white;
+.form-input form{
+  display: inline-flex;
   width: 100%;
 }
 
 .form-string {
+  background-color: white;
   border: none;
   height: 50px;
   width: 100%;
@@ -186,6 +186,7 @@ display: flex;
 }
 
 .form-submit {
+  display: block;
   background-color: #38AEF0;
   border: none;
   color: white;

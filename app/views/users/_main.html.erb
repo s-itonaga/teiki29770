@@ -98,7 +98,9 @@
 
 <div class="main3">
   <div class="form-input">
-    <input class="form-string" placeholder= "入荷物の検索を行います">
+    <%= search_form_for @q, url: search_path do |f| %>
+      <%= f.search_field :publisher_or_magazine_name_cont, class:"form-string", placeholder: "入荷物の検索を行います" %>
+      <%= f.submit "検索", class:"form-submit" %>
+    <% end %>
   </div>
-  <input class="form-submit" type="submit" value="検索">
 </div>

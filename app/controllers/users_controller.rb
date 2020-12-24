@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  def index; end
+
+  def index
+    @q = Stock.ransack(params[:q])
+    @stocks = @q.result.includes(:calendar)
+  end
 
   def edit; end
 
@@ -16,4 +20,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :code, :email)
   end
+
 end
