@@ -1,14 +1,10 @@
-.wrapper {
-display: flex;
-}
-
 .side-bar {
-  background-color: #253141;
   width: 300px;
   height: 100vh;
 }
 
 .side1 {
+  background-color: #253141;
   height: 100px;
   padding: 0 20px;
   display: flex;
@@ -41,11 +37,11 @@ display: flex;
 
 
 .main {
-  background: #253141;
   width: calc(100% - 300px);
 }
 
 .main1 {
+  background: #253141;
   height: 100px;
 }
 
@@ -135,7 +131,6 @@ display: flex;
 }
 
 .main2 {
-  background-color: #FAFAFA;
   height: calc(100vh - 190px);
   padding: 46px 40px 0;
   overflow: auto;
@@ -146,12 +141,34 @@ display: flex;
 }
 
 .koumoku {
-  color: #434a54;
+  color          : #000000;            /* 文字の色 */
+  font-size      : 36pt;               /* 文字のサイズ */
+  letter-spacing : 2px;                /* 文字間 */
+  text-shadow    : 
+       1px  1px 4px #ffffff,
+      -1px  1px 4px #ffffff,
+       1px -1px 4px #ffffff,
+      -1px -1px 4px #ffffff,
+       1px  0px 4px #ffffff,
+       0px  1px 4px #ffffff,
+      -1px  0px 4px #ffffff,
+       0px -1px 4px #ffffff;        /* 文字の影 */
   font-size: 16px;
 }
 
 .jikan {
-  color: #999;
+  color          : #000000;            /* 文字の色 */
+  font-size      : 36pt;               /* 文字のサイズ */
+  letter-spacing : 2px;                /* 文字間 */
+  text-shadow    : 
+       1px  1px 4px #ffffff,
+      -1px  1px 4px #ffffff,
+       1px -1px 4px #ffffff,
+      -1px -1px 4px #ffffff,
+       1px  0px 4px #ffffff,
+       0px  1px 4px #ffffff,
+      -1px  0px 4px #ffffff,
+       0px -1px 4px #ffffff;        /* 文字の影 */
   font-size: 12px;
   padding-left: 10px;
 }
@@ -161,7 +178,18 @@ display: flex;
 }
 
 .naiyou {
-  color: #434a54;
+  color          : #000000;            /* 文字の色 */
+  font-size      : 36pt;               /* 文字のサイズ */
+  letter-spacing : 2px;                /* 文字間 */
+  text-shadow    : 
+       1px  1px 4px #ffffff,
+      -1px  1px 4px #ffffff,
+       1px -1px 4px #ffffff,
+      -1px -1px 4px #ffffff,
+       1px  0px 4px #ffffff,
+       0px  1px 4px #ffffff,
+      -1px  0px 4px #ffffff,
+       0px -1px 4px #ffffff;        /* 文字の影 */
   font-size: 14px;
   margin-bottom: 40px;
 }

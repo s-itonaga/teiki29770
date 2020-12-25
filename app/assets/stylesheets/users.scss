@@ -1,3 +1,15 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  display: flex;
+  width: 100%;
+	position: relative;
+  background-image: image-url("books-1281581_1920.jpg");
+  background-size: auto 100%;
+	animation: bg-slider 180s linear infinite alternate; /* 23sの部分背景画像の約数だとスムーズ */
+}
+@keyframes bg-slider {
+	from { background-position: 0 0; }
+    to { background-position: -1518px 0; } /* 1518pxとは使用した背景画像の長さ */
+}
