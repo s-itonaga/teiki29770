@@ -1,4 +1,12 @@
 <div class="main1">
+  <div class="main-search">
+    <div class="form-input">
+      <%= search_form_for @q, url: search_path do |f| %>
+        <%= f.search_field :publisher_or_magazine_name_cont, class:"form-string", placeholder: "入荷物の検索を行います" %>
+        <%= f.submit "検索", class:"form-submit" %>
+      <% end %>
+    </div>
+  </div>
   <ul id="menu">
     <li><a href="#">お客様管理</a>
       <ul>
@@ -47,7 +55,6 @@
       </ul>
     </li>
   </ul>
-  <a href="#">※下段は週次業務管理ボタン(月曜日〜金曜日)を設置予定(未実装)</a>
 </div>
 
 <div class="main2">
@@ -94,13 +101,144 @@
     </div>
   </div>
 
-</div>
-
-<div class="main3">
-  <div class="form-input">
-    <%= search_form_for @q, url: search_path do |f| %>
-      <%= f.search_field :publisher_or_magazine_name_cont, class:"form-string", placeholder: "入荷物の検索を行います" %>
-      <%= f.submit "検索", class:"form-submit" %>
-    <% end %>
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:48:28
+    </div>
   </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の編集を行いました。
+    </div>
+  </div>
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:48:28
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の編集を行いました。
+    </div>
+  </div>
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:48:28
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の編集を行いました。
+    </div>
+  </div>
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:48:28
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の編集を行いました。
+    </div>
+  </div>
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:48:28
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の編集を行いました。
+    </div>
+  </div>
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:48:28
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の編集を行いました。
+    </div>
+  </div>
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:48:28
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の編集を行いました。
+    </div>
+  </div>
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      作業内容
+    </div>
+    <div class="jikan">
+      作業終了日時
+    </div>
+  </div>
+
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      行った作業を一覧表示。(モデルに登録した時間で降順表示)文章をリンクにして内容紹介ページへリンク
+    </div>
+  </div>
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:13:48
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の新規登録を行いました。
+    </div>
+  </div>
+
+  <div class="sagyou-ue">
+    <div class="koumoku">
+      例)お客様管理
+    </div>
+    <div class="jikan">
+      2020/10/20(Tue) 17:48:28
+    </div>
+  </div>
+  <div class="sagyou-sita">
+    <div class="naiyou">
+      ○○様の編集を行いました。
+    </div>
+  </div>
+
 </div>

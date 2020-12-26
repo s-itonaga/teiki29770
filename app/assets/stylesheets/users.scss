@@ -6,10 +6,132 @@
   width: 100%;
 	position: relative;
   background-image: image-url("books-1281581_1920.jpg");
-  background-size: auto 100%;
-	animation: bg-slider 180s linear infinite alternate; /* 23sの部分背景画像の約数だとスムーズ */
+  background-size: auto auto;
+	animation: bg-slider 60s linear infinite alternate ;
 }
 @keyframes bg-slider {
-	from { background-position: 0 0; }
-    to { background-position: -1518px 0; } /* 1518pxとは使用した背景画像の長さ */
+	from { background-position: 0 100px; }
+    to { background-position: -240px 100px; } 
 }
+// .bg_loop {
+//   display: flex;
+//   position: relative;
+//   width; 100vw;
+//   overflow: hidden;
+// }
+// .bg_loop::before,
+// .bg_loop::after {
+//   position: absolute;
+//   top: 0px;
+//   left: 0px;
+//   z-index: -1;
+//   width: 400vw;
+//   height: 100%;
+//   background-image:
+//   image-url("books-1281581_1920.jpg"),
+//   image-url("prague-980732_1920.jpg"),
+//   image-url("library-74038_1920.jpg"),
+//       image-url("architecture-1845144_1920.jpg");
+//   background-repeat: no-repeat;
+//   background-position:
+//       top 0px left 0vw,
+//       top 0px left 100vw,
+//       top 0px left 200vw,
+//       top 0px left 300vw;
+//   background-size: calc(100vw + 1px) 100%;
+//   content: "";
+// }
+// .bg_loop::before {
+//   animation: loop_400vw_1 50s linear infinite;
+// }
+// .bg_loop::after {
+//   left: -1px;
+//   right: 1px;
+//   animation: loop_400vw_2 50s linear infinite;
+// }
+// @media print, (min-width: 992px) {
+//   .bg_loop::before,
+//   .bg_loop::after {
+//       position: absolute;
+//       width: 200vw;
+//       background-position:
+//           top 0px left 0vw,
+//           top 0px left 50vw,
+//           top 0px left 100vw,
+//           top 0px left 150vw;
+//       background-size: calc(50vw + 1px) 100%;
+//   }
+//   .bg_loop::before {
+//       animation: loop_200vw_1 50s linear infinite;
+//   }
+//   .bg_loop::after {
+//       animation: loop_200vw_2 50s linear infinite;
+//   }
+// }
+// @media print, (min-width: 1200px) {
+//   .bg_loop::before,
+//   .bg_loop::after {
+//       position: absolute;
+//       width: 100vw;
+//       background-position:
+//           top 0px left 0vw,
+//           top 0px left 25vw,
+//           top 0px left 50vw,
+//           top 0px left 75vw;
+//       background-size: calc(25vw + 1px) 100%;
+//   }
+//   .bg_loop::before {
+//       animation: loop_100vw_1 50s linear infinite;
+//   }
+//   .bg_loop::after {
+//       animation: loop_100vw_2 50s linear infinite;
+//   }
+// }
+// @keyframes loop_400vw_1 {
+//   0% {
+//       transform: translateX(0);
+//   }
+//   100% {
+//       transform: translateX(-400vw);
+//   }
+// }
+// @keyframes loop_400vw_2 {
+//   0% {
+//       transform: translateX(400vw);
+//   }
+//   100% {
+//       transform: translateX(0vw);
+//   }
+// }
+// @keyframes loop_200vw_1 {
+//   0% {
+//       transform: translateX(0vw);
+//   }
+//   100% {
+//       transform: translateX(-200vw);
+//   }
+// }
+// @keyframes loop_200vw_2 {
+//   0% {
+//       transform: translateX(200vw);
+//   }
+//   100% {
+//       transform: translateX(0vw);
+//   }
+// }
+// @keyframes loop_100vw_1 {
+//   0% {
+//       transform: translateX(0vw);
+//   }
+//   100% {
+//       transform: translateX(-100vw);
+//   }
+// }
+// @keyframes loop_100vw_2 {
+//   0% {
+//       transform: translateX(100vw);
+//   }
+//   100% {
+//       transform: translateX(0vw);
+//   }
+// }

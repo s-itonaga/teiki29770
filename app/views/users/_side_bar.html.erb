@@ -1,24 +1,21 @@
 <div class="side1">
-  <div class="side1-1">
-        <%= link_to current_user.name, edit_user_path(current_user) %>
-  </div>
-</div>
-
-<div class="side2">
-  <div class="side2-1">
-    <a href="#">コミック要望表(未実装)</a>
-  </div>
-
-    <div class="side2-1">
-    <a href="#">次月コミック登録未(未実装)</a>
-  </div>
-
-  <div class="side2-1">
-    <a href="#">予備</a>
-  </div>
-
-  <div class="side2-1">
-    <a href="#">月次業務登録(未実装)</a>
-  </div>
-
+  <ul id="side-menu">
+    <li>
+      <%= link_to current_user.name, edit_user_path(current_user) %>
+      <ul>
+        <li>
+          <a href="#">コミック要望表(未実装)</a>
+        </li>
+        <li>
+          <a href="#">次月コミック登録未(未実装)</a>
+        </li>
+        <li>
+          <a href="#">予備</a>
+        </li>
+        <li>
+          <a href="#">月次業務登録(未実装)</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>

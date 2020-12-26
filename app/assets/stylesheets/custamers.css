@@ -2,53 +2,66 @@
   width: 300px;
   height: 100vh;
 }
-
 .side1 {
   background-color: #253141;
   height: 100px;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
 }
-
 .side1-1 a{
-  font-size: 20px;
-  color: #fff;
+  font-size      : 20px;
+  font-weight    : bold;
+  color          : #fff;
   text-decoration: none;
 }
-
-.side2 {
-  background-color: #2F3E51;
-  height: calc(100vh - 100px);
-  padding: 0 20px;
-  overflow: auto;
-}
-
-.side2-1 {
-  padding: 20px 0 40px;
-  /* background-color: #38AEF0; */
-}
-
-.side2-1 a{
-  text-decoration: none;
-  color: white;
-}
-
-
 .main {
   width: calc(100% - 300px);
 }
-
 .main1 {
   background: #253141;
   height: 100px;
 }
-
 .main1 a{
   color: #fff;
 }
-
+.main-search {
+  height: 50px;
+  padding: 10px 40px;
+}
+.form-input form{
+  display: inline-flex;
+  width: 100%;
+}
+.form-string {
+  background-color: white;
+  border: none;
+  border-radius: 2px;
+  height: 30px;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+input[type="search"]:focus{
+  border: 2px solid #38AEF0;
+  box-shadow: 0 0 8px 0 #38AEF0;
+  outline: none;
+}
+.form-submit {
+  display: block;
+  background-color: #38AEF0;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  height: 30px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+.form-submit:hover{
+  background-color: #5fbdf3;
+  color: #e0dc62;
+}
 #menu {
   list-style-type: none;
   height: 50px;
@@ -56,7 +69,6 @@
   padding: 0;
   background: #253141;
 }
-
 #menu li {
   position: relative;
   width: 20%;
@@ -65,7 +77,6 @@
   padding: 0;
   text-align: center;
 }
-
 #menu li a {
   display: block;
   margin: 0;
@@ -76,7 +87,6 @@
   line-height: 1;
   text-decoration: none;
 }
-
 #menu li ul {
   list-style: none;
   position: absolute;
@@ -85,12 +95,10 @@
   margin: 0;
   padding: 0;
 }
-
 #menu li:last-child ul {
   left: -100%;
   width: 100%;
 }
-
 #menu li ul li {
   overflow: hidden;
   width: 200%;
@@ -102,7 +110,6 @@
   -ms-transition: .2s;
   transition: .2s;
 }
-
 #menu li ul li a {
   padding: 13px 15px;
   background:  #2F3E51;
@@ -110,28 +117,24 @@
   font-size: 14px;
   font-weight: normal;
 }
-
 #menu li:hover > a {
   background:  #2F3E51;
   color: #e0dc62;
 }
-
 #menu li:hover ul li {
   overflow: visible;
   height: 38px;
   border-bottom: 1px solid #fff;
 }
-
 #menu li:hover ul li:first-child {
   border-top: 0;
 }
-
 #menu li:hover ul li:last-child {
   border-bottom: 0;
 }
 
 .main2 {
-  height: calc(100vh - 190px);
+  height: calc(100vh - 100px);
   padding: 46px 40px 0;
   overflow: auto;
 }
@@ -139,11 +142,11 @@
 .sagyou-ue {
   display: flex;
 }
-
 .koumoku {
-  color          : #000000;            /* 文字の色 */
-  font-size      : 36pt;               /* 文字のサイズ */
-  letter-spacing : 2px;                /* 文字間 */
+  color          : #000000;
+  font-size      : 36pt;
+  font-weight    : bold;
+  letter-spacing : 2px;
   text-shadow    : 
        1px  1px 4px #ffffff,
       -1px  1px 4px #ffffff,
@@ -155,11 +158,11 @@
        0px -1px 4px #ffffff;        /* 文字の影 */
   font-size: 16px;
 }
-
 .jikan {
-  color          : #000000;            /* 文字の色 */
-  font-size      : 36pt;               /* 文字のサイズ */
-  letter-spacing : 2px;                /* 文字間 */
+  color          : #000000;
+  font-size      : 36pt;
+  font-weight    : bold;
+  letter-spacing : 2px;
   text-shadow    : 
        1px  1px 4px #ffffff,
       -1px  1px 4px #ffffff,
@@ -172,15 +175,14 @@
   font-size: 12px;
   padding-left: 10px;
 }
-
 .sagyou-sita {
   margin-top: 10px;
 }
-
 .naiyou {
-  color          : #000000;            /* 文字の色 */
-  font-size      : 36pt;               /* 文字のサイズ */
-  letter-spacing : 2px;                /* 文字間 */
+  color          : #000000;
+  font-size      : 36pt;
+  font-weight    : bold;
+  letter-spacing : 2px;
   text-shadow    : 
        1px  1px 4px #ffffff,
       -1px  1px 4px #ffffff,
@@ -193,33 +195,69 @@
   font-size: 14px;
   margin-bottom: 40px;
 }
-
-.main3 {
-  background-color: #DDDDDD;
-  height: 90px;
-  padding: 20px 40px;
-}
-
-.form-input form{
-  display: inline-flex;
+#side-menu {
+  list-style-type: none;
+  height: 100%;
   width: 100%;
+  margin: 0 auto;
+  background: #253141;
 }
-
-.form-string {
-  background-color: white;
-  border: none;
-  height: 50px;
+#side-menu li {
+  position: relative;
   width: 100%;
-  padding-left: 10px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
-
-.form-submit {
+#side-menu li a {
   display: block;
-  background-color: #38AEF0;
-  border: none;
-  color: white;
-  font-size: 16px;
-  height: 50px;
-  margin-left: 15px;
-  padding: 0 20px;
+  margin: 0;
+  padding: 37px 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+  text-decoration: none;
+}
+#side-menu li ul {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+#side-menu ul li {
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  color: #fff;
+  -moz-transition: .2s;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  -ms-transition: .2s;
+  transition: .2s;
+}
+#side-menu li ul li a {
+  padding: 13px 15px;
+  background:  #2F3E51;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+}
+#side-menu li:hover > a {
+  background:  #2F3E51;
+  color: #e0dc62;
+}
+#side-menu li:hover ul li {
+  overflow: visible;
+  height: 38px;
+  border-bottom: 1px solid #fff;
+}
+#side-menu li:hover ul li:first-child {
+  border-top: 0;
+}
+#side-menu li:hover ul li:last-child {
+  border-bottom: 0;
 }
